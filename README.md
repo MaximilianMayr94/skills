@@ -1,22 +1,22 @@
-# Skills from an Software Engineering Manager
+# Skills from a Software Engineering Manager
 
-Hi im Maximilian, i currently work myself into the topics of LLM-Management/-Processes/-Quality/-Automation/-... and here you can find my latest public metafiles (skills) that i have created. These are made for copilot but you can use them with other tools and any model. 
+Hi, I am Maximilian. I am currently working on LLM management, processes, quality and automation. This repository contains my latest public meta files (skills). They are made for Copilot, but you can adapt them to other tools and models.
 
-I created these skills with the goal to be able to put into any current project, form new ideas to legacy code. They will focus on a simple and effective process while keeping LLM-Automation in mind. I will keep updating this repository with new skills and improvements to existing skills, so check back often.
+I created these skills so they can be copied into current projects, from new ideas to legacy code. They focus on a simple and effective process while keeping LLM automation in mind. I will keep updating this repository with new skills and improvements.
 
 If you are interested into the details of these skills and my thought process behind it check out my Youtube channel:  [![YouTube Channel](https://img.shields.io/badge/YouTube-SoftMax--v5t-red?logo=youtube)](https://www.youtube.com/@SoftMax-v5t)
 
 ## Mermaid
-Install the mermaid plugin so you also get these nice diagrams, if they are not natively supported! Do not let the llm create ascii diagrams.
+Install a Mermaid plugin if diagrams are not supported natively. Do not let the LLM create ASCII diagrams.
 
 ## Overview - Meta-Files
-Note: All skills (But implementation/review) are interactive and might require user input while executing.
+Note: Most skills are interactive and might require user input while executing. `implement`, `review` and `verify` are non-interactive services.
 
 ```mermaid
 flowchart TB
   
     %% First line emphasized: bold. Descriptions smaller and grey.
-    CF["<b>copilot-instrucitons.md</b><br/><span style='font-size:10px;color:#888'>basic llm interaction guidelines</span>"]
+    CF["<b>.github/copilot-instructions.md</b><br/><span style='font-size:10px;color:#888'>basic LLM interaction guidelines</span>"]
     
     subgraph General[General]
       G1["<b>init</b><br/><span style='font-size:10px;color:#888'>Create context.md</span>"]
@@ -27,7 +27,7 @@ flowchart TB
     end
 
     subgraph Process[Process]
-      P1["<b>architect</b><br/><span style='font-size:10px;color:#888'>Defines SW Architecture - Groups Functions<br/>context.md -> architecture.md</span>"]
+      P1["<b> </b><br/><span style='font-size:10px;color:#888'>Defines SW Architecture - Groups Functions<br/>context.md -> architecture.md</span>"]
       P2["<b>refine</b><br/><span style='font-size:10px;color:#888'>Prepare Implementation<br/>architecture.md & review.md -> tickets/*</span>"]
       P3["<b>implement</b><br/><span style='font-size:10px;color:#888'>Implement Tickets</span>"]
       P4["<b>review</b><br/><span style='font-size:10px;color:#888'>Review Software<br/>* -> review.md</span>"]
@@ -57,13 +57,13 @@ flowchart TB
     subgraph tickets[copilot/tickets]
         C4["<b>copilot/tickets/kanban.md</b><br/><span style='font-size:10px;color:#888'>Kanban overview of all tickets</span>"]
         C5["<b>copilot/tickets/####.md</b><br/><span style='font-size:10px;color:#888'>Ticket to implement</span>"]
-        C8["<b>copilot/tickets/dept_####.md</b><br/><span style='font-size:10px;color:#888'>Ticket from dept</span>"]
+        C8["<b>copilot/tickets/debt_####.md</b><br/><span style='font-size:10px;color:#888'>Technical debt ticket</span>"]
     end
 ```
 
 ### Mermaid kanban example
 
-The script scripts/kanban.py generates this mermaid overview from all tickets. The Agents should execute it after implement/refinement.
+Optional helper: `scripts/kanban.py` can generate this Mermaid overview from all tickets. Agents should execute it after `implement`/`refine` only when the script exists in the target project.
 
 ```mermaid
 ---
@@ -72,7 +72,7 @@ config:
     ticketBaseUrl: 'https://mermaidchart.atlassian.net/browse/#TICKET#'
 ---
 kanban
-  Dept
+  Debt
     a[Old Architecture]@{ ticket: d0001, assigned: 'core', priority: 'High' }
     a[Old Architecture]@{ ticket: d0002, assigned: 'utils', priority: 'High' }
   Todo

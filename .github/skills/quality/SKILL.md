@@ -1,16 +1,19 @@
 ---
 name: quality
 description: adds or updates the quality and test requirements in copilot/context.md.
+mode: interactive
+input: copilot/context.md, existing tooling
+output: copilot/context.md
 allowed-tools: shell
 ---
 
-basic file: copilot/context.md
+basic file: copilot/context.md in the target project
 
 # Goal
 - Define measurable quality + test requirements for the project.
 
 # Phase 1 - Load
-- Load `copilot/context.md`.
+- Load `copilot/context.md` from the target project.
 - Inspect existing tooling (linters, formatters, test frameworks, CI).
 
 # Phase 2 - Interview

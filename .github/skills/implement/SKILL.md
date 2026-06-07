@@ -1,10 +1,11 @@
 ---
 name: implement
 description: implements tickets from copilot/tickets following architecture, refinement and quality rules.
+mode: non-interactive
+input: copilot/tickets/####.md, copilot/context.md, copilot/architecture.md, copilot/refinement.md
+output: code, tests, updated ticket status, copilot/tickets/kanban.md (optional)
 allowed-tools: shell
 ---
-
-input: copilot/tickets/####.md
 
 # Goal
 - SDLC phase 4 (Implementation, Agile). Non-interactive: do not ask, follow the documents.
@@ -16,8 +17,8 @@ flowchart LR
 ```
 
 # Phase 1 - Load
-- Always load `copilot/context.md` first, then `architecture.md`, `refinement.md`.
-- implement given ticket. If not ticket was given look for the lowest not done ticket.
+- Always load `copilot/context.md` from the target project first, then `copilot/architecture.md` and `copilot/refinement.md`.
+- Implement the given ticket. If no ticket was given, look for the lowest not-done ticket.
 
 # Phase 2 - Implement (per ticket)
 ```mermaid
@@ -26,9 +27,9 @@ flowchart LR
   S --> TDD[Write tests]
   TDD --> Impl[Implement]
   Impl --> Q{Quality gates pass?}
-  Q -- no --> Impl
-  Q -- yes --> D[Set Done]
-  Q -- blocked --> F[Set Failed + note]
+  Q -->|no| Impl
+  Q -->|yes| D[Set Done]
+  Q -->|blocked| F[Set Failed + note]
 ```
 - Follow TDD: write tests from the ticket first.
 - Reuse code, keep it small and simple (context.md rules).
@@ -38,4 +39,4 @@ flowchart LR
 - Fix failures before finishing. If unfixable: set ticket `Failed` + note reason.
 
 # Phase 4 - Update board
-- Run `scripts/kanban.py` if present.
+- Run `scripts/kanban.py` only if present in the target project.

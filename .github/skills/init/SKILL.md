@@ -1,6 +1,9 @@
 ---
 name: init
-description: creates the context.md file and asks you questiosns about the project the user can state when he is done or the ai stops asking questions.
+description: creates copilot/context.md and asks questions about the project until enough context is available.
+mode: interactive
+input: existing project docs/code, context.default.md, context.example.md
+output: copilot/context.md
 allowed-tools: shell
 ---
 
@@ -8,14 +11,14 @@ allowed-tools: shell
 - Produce a high-quality `copilot/context.md`.
 
 # Phase 1 - Scan
-Scan the whole project for existing documentation, architecture, code quality, test quality, bugs, gaps, problems and contradicting information. Use this as input for the interview and the context.md. Do not assume that the existing information is correct. Also use `context.default.md` (this folder) as default input and `context.example.md` (this folder) to see how an result should look like.
+Scan the whole project for existing documentation, architecture, code quality, test quality, bugs, gaps, problems and contradicting information. Use this as input for the interview and `context.md`. Do not assume that the existing information is correct. Also use `context.default.md` (this folder) as default input and `context.example.md` (this folder) to see how a result should look.
 
 # Phase 2 - Interview
 Ask the user relentlessly about the project, process, quality(Testing), tech stack and also about bugs, gaps, problems and contradicting information in the existing problem to be able to create the best possible context.md. Always ask for clarification if you are not sure about something. Do not make assumptions. After a few questions - max 5. - ask the user if he wants to progress to phase 3 or in case you do not have more questions progress to phase 3. 
 
 # Phase 3 - Create context.md
 
-- Create `copilot/context.md` using `context.default.md` (this folder) as template.
+- Create `copilot/context.md` in the target project using `context.default.md` (this folder) as template.
 - See `context.example.md` for a filled-out example.
 - Fill every section (I–IX) from interview answers and project scan.
 - The important chapter VI Context should be as detailed as a product requirements specification. Do not leave out any function that needs to be implemented, any user flow that needs to be supported.

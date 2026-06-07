@@ -30,5 +30,5 @@ flowchart TB
 - Functional gaps vs. `context.md`.
 - Architecture/code mismatches and contradictions.
 - Risks ranked by severity (High / Medium / Low).
-- Hand-off: which items should become `dept_####` tickets (`refine`) or drive a `redesign`.
+- Hand-off: which items should become `debt_####` tickets (`refine`) or drive a `redesign`.
 

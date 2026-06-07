@@ -1,0 +1,6 @@
+.idea/
+*.user
+*.tmp
+*.log
+__pycache__/
+.pytest_cache/

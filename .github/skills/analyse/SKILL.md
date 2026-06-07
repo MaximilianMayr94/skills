@@ -1,18 +1,17 @@
 ---
 name: analyse
 description: reverse-engineers architecture.md and review.md from existing legacy code.
+mode: interactive
+input: existing source code, copilot/context.md, copilot/architecture.md, copilot/review.md
+output: copilot/analysis.md
 allowed-tools: shell
 ---
-
-module: LegacyCode
-input: existing source code, copilot/context.md,  copilot/architecture.md, copilot/review.md
-output: copilot/analysis.md
 
 # Goal
 - Recover the real architecture from the code that was requested by the user and capture its properties.
 
 # Phase 1 - Load
-- Load `copilot/context.md`, `copilot/architecture.md` if present 
+- Load `copilot/context.md` from the target project and `copilot/architecture.md` if present.
 - Scan the requested part of the codebase: entry points, modules, dependencies.
 - Reconstruct architecture
 - Record smells, risks, dead code, coupling, missing tests.

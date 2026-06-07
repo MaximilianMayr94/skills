@@ -1,11 +1,11 @@
 ---
 name: architect
 description: defines the software architecture from copilot/context.md into copilot/architecture.md.
-allowed-tools: shell
----
-
+mode: interactive
 input: copilot/context.md
 output: copilot/architecture.md
+allowed-tools: shell
+---
 
 # Goal
 - SDLC phase 2 (Architecture, V-Model). Interactive.
@@ -13,10 +13,10 @@ output: copilot/architecture.md
 - Greenfield: from `context.md`. Legacy: use `analyse` + `redesign` instead.
 
 # Phase 1 - Load
-- Always load `copilot/context.md` first (targets, functionality, tech stack, quality).
+- Always load `copilot/context.md` from the target project first (targets, functionality, tech stack, quality).
 
 # Phase 2 - Group functionality
-- Group functions into Components (see context.md glossary) - if to big you can creat sub-components and so on.
+- Group functions into components (see `context.md` glossary). If a component is too large, create sub-components.
 - Define interfaces between them (in case of protocols or header classes).
 
 ```mermaid

@@ -1,11 +1,11 @@
 ---
 name: refine
 description: prepares implementation from architecture.md and review.md into refinement.md and tickets.
+mode: interactive
+input: copilot/context.md, copilot/architecture.md, copilot/review.md (optional)
+output: copilot/refinement.md, copilot/tickets/####.md, copilot/tickets/kanban.md (optional)
 allowed-tools: shell
 ---
-
-input: copilot/context.md, copilot/architecture.md, copilot/review.md (optional)
-output: copilot/refinement.md, copilot/tickets/####.md, copilot/tickets/kanban.md
 
 # Goal
 - SDLC phase 3 (Refinement, Agile). Interactive.
@@ -17,8 +17,8 @@ flowchart LR
 ```
 
 # Phase 1 - Load
-- Always load `copilot/context.md` first, then `copilot/architecture.md`.
-- Load `copilot/review.md` if present (feed findings as `dept_####` tickets).
+- Always load `copilot/context.md` from the target project first, then `copilot/architecture.md`.
+- Load `copilot/review.md` if present (feed findings as `debt_####` tickets).
 
 # Phase 2 - Scope
 - If the scope is not clear ask the user on what (sub)-component to focus on. Can be more then one.
@@ -47,4 +47,4 @@ flowchart LR
 ```
 
 # Phase 6 - Kanban
-- generate kanban documentation by running `scripts/kanban.py` if it exists.
+- Generate kanban documentation by running `scripts/kanban.py` only if it exists in the target project.

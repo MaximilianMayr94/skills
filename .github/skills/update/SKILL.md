@@ -1,6 +1,9 @@
 ---
 name: update
-description: updates copilot/context.md based on new ideas given by the user. Or the project has changed nad the context.md is not up to date anymore.
+description: updates copilot/context.md based on user ideas or project changes.
+mode: interactive
+input: copilot/context.md, user changes, project changes
+output: copilot/context.md
 allowed-tools: shell
 ---
 
@@ -8,14 +11,14 @@ allowed-tools: shell
 - Keep `context.md` in sync with the real project state.
 
 # Phase 1 - Load
-- Load `copilot/context.md` (see init skill for section layout).
+- Load `copilot/context.md` from the target project (see init skill for section layout).
 
 # Phase 2 - Interview
 - Ask the user relentlessly about changes and new ideas: new/removed features, tech, quality, bugs, gaps, contradictions.
 - After a few questions - max 5. - ask the user if he wants to progress to phase 3 or in case you do not have more questions progress to phase 3.
 
 # Phase 3 - Apply
-- Update affected sections only (I–IX, see init skill).
+- Update affected sections only (I-IX, see init skill).
 - Remove outdated info, mark open questions.
 
 ```mermaid

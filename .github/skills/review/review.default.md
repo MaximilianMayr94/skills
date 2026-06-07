@@ -8,7 +8,7 @@
 ## Findings
 | # | Severity | Location | Problem | Suggestion | -> Ticket |
 |---|----------|----------|---------|------------|-----------|
-| 1 | High | <file/component> | <problem> | <fix> | dept_#### |
+| 1 | High | <file/component> | <problem> | <fix> | debt_#### |
 
 ## Gaps & contradictions
 - Missing tests, undocumented behavior, doc vs code mismatch.

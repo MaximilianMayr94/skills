@@ -8,9 +8,9 @@
 ## Findings
 | # | Severity | Location | Problem | Suggestion | -> Ticket |
 |---|----------|----------|---------|------------|-----------|
-| 1 | High | FileRepository.cpp | corrupt file crashes load | skip + warn | dept_0001 |
-| 2 | Medium | NoteService | no input validation | reject empty text | dept_0002 |
-| 3 | Low | CLI Renderer | duplicated format code | extract helper | dept_0003 |
+| 1 | High | FileRepository.cpp | corrupt file crashes load | skip + warn | debt_0001 |
+| 2 | Medium | NoteService | no input validation | reject empty text | debt_0002 |
+| 3 | Low | CLI Renderer | duplicated format code | extract helper | debt_0003 |
 
 ## Gaps & contradictions
 - No tests for `search` edge cases.

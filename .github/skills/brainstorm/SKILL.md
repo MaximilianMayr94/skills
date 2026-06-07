@@ -1,6 +1,9 @@
 ---
 name: brainstorm
 description: brainstorms ideas with the user and feeds results back into copilot/context.md.
+mode: interactive
+input: copilot/context.md
+output: copilot/context.md
 allowed-tools: shell
 ---
 
@@ -8,10 +11,10 @@ allowed-tools: shell
 - Generate, evaluate and capture ideas for the project.
 
 # Phase 1 - Load
-- Load `copilot/context.md` for targets, state and constraints.
+- Load `copilot/context.md` from the target project for targets, state and constraints.
 
 # Phase 2 - Diverge
-- Propose multiple ideas (features, approaches, simplifications).
+- Propose multiple ideas like a storm (features, approaches, simplifications).
 - Challenge assumptions, offer alternatives.
 - Ask the user open questions to widen the solution space. Discuss with the user question by question refine ideas and generate new ones. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Every few questions ask the user if he wants to progress to phase 3 or if he wants to continue brainstorming with more questions.
 
@@ -32,6 +35,8 @@ quadrantChart
 ```
 
 # Phase 4 - Apply
-- Write selected ideas into `context.md` `VI. Context` (and others if relevant).
-- Keep short, bullet points, mermaid where useful.
+- Ask the user to either
+    - Update `copilot/context.md` in the target project with validated state, open issues and ideas.
+    - Fix the findings directly
+- Do not update unvalidated/undiscussed findings.
 

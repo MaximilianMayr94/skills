@@ -42,5 +42,5 @@ sequenceDiagram
 - Low: inconsistent naming (`addNote` vs `do_list`).
 - Hand-off:
   - `redesign` → target components CLI / NoteCore / Storage.
-  - `dept_0001` extract storage, `dept_0002` add I/O error handling.
+  - `debt_0001` extract storage, `debt_0002` add I/O error handling.
 

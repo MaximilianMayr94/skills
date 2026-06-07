@@ -29,7 +29,7 @@
 - Test framework gtest
 - Write tests before writing the implementation (TDD)
 - Write tests for each bug/ticket that you implement/fix (Regression tests)
-- For each test use a highly versatile test selection based on failure expections. Also include the standards (low limit, high limit, outside of limits, empty, full, and so on).
+- For each test use a versatile test selection based on failure expectations. Also include standards such as low limit, high limit, outside of limits, empty, full, and so on.
 
 ## VI. Context
 - Detailed description: targets, stories, user flows, requirements, ideas, state.
@@ -42,13 +42,13 @@
 Words with special meaning in this project. Standard glossary to extend:
 - Software Design: Defines components, their included functionality and the interfaces.
 - Software Architecture: Defines the implementation of all modules, units of a component in detail (i.e. mostly class diagrams)
-- Component: Highest level of abstraction of functionality. A component can be divided into sub-components and sub-sub-components if needed but this is only for extremly big projects. A Component contains modules and the component unit (named after the component). Components do not necessary be software relevant, its just a group of functionality. (I.e. Component "User Management" could contain modules "Authentication", which contains Units "WebDav", "OAuth", "LDAP" and so on.)
+- Component: Highest level of abstraction of functionality. A component can be divided into sub-components and sub-sub-components if needed, but this is only for extremely big projects. A component contains modules and the component unit (named after the component). Components are not necessarily software-relevant; they are groups of functionality. (I.e. component "User Management" could contain module "Authentication", which contains units "WebDav", "OAuth", "LDAP" and so on.)
 - Module: Groups units that belong together and share common interfaces. A module can also have a unit that is named after the module.
 - Unit: A unit is a .h and a .c/cpp file that mostly contains a class.
 - Interface: An interface are the functions that are needed to interact with a Component/Module/Unit. Interfaces can be functions of a class, an abstract/virtual class and even static global functions.
 - Test driven development (TDD): First implement tests that will cover all functionality that is followed to implement.
 - Regression test: First write a test that shows the bug, then implement the fix for the test and thus solving the bug.
-- Dept: Tasks that are not related to the functionality of the project but aim for general improvements, i.e. refactoring, improving the architecture, improving the process, and so on.
+- Technical debt: Tasks that are not related to project functionality but aim for general improvements, i.e. refactoring, improving the architecture, improving the process, and so on.
 
 ## IX. Abbreviations
 - Abbreviations and their meaning relevant for the project.

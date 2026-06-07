@@ -1,7 +1,7 @@
 # Ticket ####
 
 - **Title:** <short title>
-- **Type:** feature | bug | dept
+- **Type:** feature | bug | debt
 - **Assigned:** <component/module>
 - **Priority:** Very Low | Low | Medium | High | Very High
 - **Status:** Todo | InProgress | Done | Failed

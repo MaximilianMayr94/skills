@@ -1,18 +1,17 @@
 ---
 name: redesign
 description: redesigns copilot/architecture.md for legacy code into a target architecture.
+mode: interactive
+input: copilot/analysis.md, copilot/context.md, copilot/architecture.md (current, optional)
+output: copilot/architecture.md (target), debt tickets via refine
 allowed-tools: shell
 ---
-
-module: LegacyCode
-input: copilot/analysis.md, copilot/context.md, copilot/architecture.md (current, optional)
-output: copilot/architecture.md (target), dept tickets via refine
 
 # Goal
 - Evolve the legacy architecture toward a clean target design.
 
 # Phase 1 - Load
-- Load `context.md`, `analysis.md` (from the `analyse` skill), current `architecture.md` if present.
+- Load `copilot/context.md`, `copilot/analysis.md` (from the `analyse` skill), and current `copilot/architecture.md` if present from the target project.
 
 # Phase 2 - Target design
 - Propose target components/modules/interfaces.
@@ -31,5 +30,5 @@ flowchart LR
 - Then progress to phase 4 with the selected ideas.
 
 # Phase 4 - Apply
-- Update `copilot/architecture.md` with the finidings
+- Update `copilot/architecture.md` with the findings.
 
