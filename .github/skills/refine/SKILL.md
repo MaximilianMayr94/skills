@@ -29,7 +29,7 @@ flowchart LR
 - Use vertical slicing to define the tickets and slices 
 
 # Phase 4 - Discuss with user
-- Ask the user open questions. Discuss with the user question by question refine ideas and generate new ones. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Clarify Slices. Every few questions ask the user if he wants to progress to phase 4 or if he wants to continue refining with more questions.
+- Ask the user open questions. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Clarify Slices. Every few questions ask the user if he wants to progress to phase 4 or if he wants to continue refining with more questions.
 
 # Phase 5 - Creation
 - Create `copilot/refinement.md`

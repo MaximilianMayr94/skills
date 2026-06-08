@@ -16,7 +16,7 @@ allowed-tools: shell
 # Phase 2 - Diverge
 - Propose multiple ideas like a storm (features, approaches, simplifications).
 - Challenge assumptions, offer alternatives.
-- Ask the user open questions to widen the solution space. Discuss with the user question by question refine ideas and generate new ones. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Every few questions ask the user if he wants to progress to phase 3 or if he wants to continue brainstorming with more questions.
+- Ask the user open questions to widen the solution space. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Every few questions ask the user if he wants to progress to phase 3 or if he wants to continue brainstorming with more questions.
 
 # Phase 3 - Converge
 - Cluster ideas, rate by value vs. effort.
@@ -39,4 +39,32 @@ quadrantChart
     - Update `copilot/context.md` in the target project with validated state, open issues and ideas.
     - Fix the findings directly
 - Do not update unvalidated/undiscussed findings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
