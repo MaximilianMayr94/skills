@@ -1,17 +1,14 @@
 ---
 name: brainstorm
-description: brainstorms ideas with the user and feeds results back into copilot/context.md.
+description: brainstorms ideas with the user and feeds validated results back into copilot/context.md or copilot/software_requirements.md.
 mode: interactive
-input: copilot/context.md
-output: copilot/context.md
+input: copilot/context.md, copilot/software_requirements.md
+output: copilot/context.md, copilot/software_requirements.md
 allowed-tools: shell
 ---
 
-# Goal
-- Generate, evaluate and capture ideas for the project.
-
 # Phase 1 - Load
-- Load `copilot/context.md` from the target project for targets, state and constraints.
+- Load `copilot/context.md` and `copilot/software_requirements.md` from the target project for targets, state, constraints and product behavior.
 
 # Phase 2 - Diverge
 - Propose multiple ideas like a storm (features, approaches, simplifications).
@@ -36,7 +33,7 @@ quadrantChart
 
 # Phase 4 - Apply
 - Ask the user to either
-    - Update `copilot/context.md` in the target project with validated state, open issues and ideas.
+    - Update `copilot/context.md` / `copilot/software_requirements.md` in the target project with validated state, open issues and ideas.
     - Fix the findings directly
 - Do not update unvalidated/undiscussed findings.
 

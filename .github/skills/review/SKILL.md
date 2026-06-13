@@ -2,22 +2,14 @@
 name: review
 description: reviews the software and writes findings into copilot/review.md.
 mode: non-interactive
-input: copilot/context.md, copilot/architecture.md, copilot/refinement.md, source code
-output: copilot/review.md
+input: copilot/context.md, copilot/software_requirements.md, copilot/architecture.md, copilot/refinement/*.md, source code
+output: copilot/review/review_*.md
 allowed-tools: shell
 ---
 
-# Goal
-- SDLC phase 5 (Review, Agile). Non-interactive.
-- Find problems, bugs, gaps and contradictions; suggest architecture/refinement changes.
-
-```mermaid
-flowchart LR
-  refine --> implement --> review --> refine
-```
-
 # Phase 1 - Load
-- Always load `copilot/context.md` from the target project first, then `copilot/architecture.md` and `copilot/refinement.md`.
+- Load ``copilot/context.md``, ``copilot/software_requirements.md``, ``copilot/architecture.md``
+- Load necessary files from tickets and refinement - if context is unclear ask the user what to review
 - Scan source, tests, quality config.
 
 # Phase 2 - Review
@@ -26,6 +18,6 @@ flowchart LR
 - Check for: correctness, consistency, gaps, duplication, missing tests, doc/code mismatch. Per `context.md`.
 
 # Phase 3 - Write review.md
-- Use `review.default.md` (this folder); see `review.example.md`.
+- Write `copilot/review/review_*.md` use `review.default.md`.
 - Rank findings by severity. Each finding: location, problem, suggestion.
-- Mark items that should become `debt_####` tickets (not needed to fix to progress).
+- Mark items that should become dept tickets (not needed to fix to progress to ``6. Verification``).

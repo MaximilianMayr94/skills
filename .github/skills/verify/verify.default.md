@@ -16,6 +16,12 @@
 |-----------|--------------------------|-------|
 | <component> | yes/no | <deviation> |
 
+
+## Quality gates
+| Criteria   | Implemented as expected? | Notes |
+|------------|--------------------------|-------|
+| <criteria> | yes/no                   | <deviation> |
+
 ## Deviations & suggestions
 - Bullet list (feed back to architect/refine).
 

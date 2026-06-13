@@ -7,30 +7,17 @@ output: copilot/verify.md
 allowed-tools: shell
 ---
 
-# Goal
-- SDLC phase 6 (Verification, V-Model). Non-interactive service.
-- Final check: does the software meet `context.md` requirements and follow architecture/refinement?
-
-```mermaid
-flowchart LR
-  ctx[context.md] --> arch[architecture.md]
-  arch --> impl[Implementation + tests]
-  impl --> verify[verify.md]
-```
-
 # Phase 1 - Load
-- Always load `copilot/context.md` from the target project first, then `copilot/architecture.md` and `copilot/refinement.md`.
+- load `copilot/context.md`, `software_requirements.md`, `copilot/architecture.md` and all refinement documents.
 
 # Phase 2 - Verify
 - Map each requirement/component to evidence (test, code, gate result).
 - Run quality gates (build, lint, tests) and record results.
-- Do not assume ambiguous or untestable requirements. Record them as open verification issues.
+- Do not assume ambiguous or untestable requirements. Record them as open verification issues. And write them as tests for the user to do.
 
 # Phase 3 - Write verify.md
-- Use `verify.default.md` (this folder); see `verify.example.md`.
+- Use `verify.default.md` (this folder);
 - Give a pass/fail per requirement + overall verdict.
+- Write a testlist for open cases for the user.
 - List deviations and suggested architecture/refinement changes.
-
-# Next
-- On deviations: hand findings back to `architect` / `refine`.
 

@@ -1,69 +1,79 @@
 # Skills from a Software Engineering Manager
 
-Hi, I am Maximilian. I am currently working on LLM management, processes, quality and automation. This repository contains my latest public meta files (skills). They are made for Copilot, but you can adapt them to other tools and models.
+Hi, I am Maximilian. I work on LLM management, process, quality and automation. This repository contains public meta files for Copilot-style agents. They can be copied into new projects or legacy-code projects.
 
-I created these skills so they can be copied into current projects, from new ideas to legacy code. They focus on a simple and effective process while keeping LLM automation in mind. I will keep updating this repository with new skills and improvements.
+[![YouTube Channel](https://img.shields.io/badge/YouTube-SoftMax--v5t-red?logo=youtube)](https://www.youtube.com/@SoftMax-v5t)
 
-If you are interested into the details of these skills and my thought process behind it check out my Youtube channel:  [![YouTube Channel](https://img.shields.io/badge/YouTube-SoftMax--v5t-red?logo=youtube)](https://www.youtube.com/@SoftMax-v5t)
+Use Mermaid-capable Markdown rendering. Do not replace diagrams with ASCII art.
 
-## Mermaid
-Install a Mermaid plugin if diagrams are not supported natively. Do not let the LLM create ASCII diagrams.
-
-## Overview - Meta-Files
-Note: Most skills are interactive and might require user input while executing. `implement`, `review` and `verify` are non-interactive services.
+## VAgile process
 
 ```mermaid
 flowchart TB
-  
-    %% First line emphasized: bold. Descriptions smaller and grey.
-    CF["<b>.github/copilot-instructions.md</b><br/><span style='font-size:10px;color:#888'>basic LLM interaction guidelines</span>"]
-    
-    subgraph General[General]
-      G1["<b>init</b><br/><span style='font-size:10px;color:#888'>Create context.md</span>"]
-      G2["<b>update</b><br/><span style='font-size:10px;color:#888'>Update context.md</span>"]
-      G3["<b>quality</b><br/><span style='font-size:10px;color:#888'>Add/Update Quality requirements to context.md</span>"]
-      G4["<b>brainstorm</b><br/><span style='font-size:10px;color:#888'>Brainstorm Ideas<br/>-> update context.md</span>"]
-      G5["<b>criticize</b><br/><span style='font-size:10px;color:#888'>Criticize from project to files <br/>-> update context.md</span>"]
+    subgraph VM_TOP["V-Model · whole project"]
+        direction TB
+        D["1. Definition<br/>(init, brainstorm, criticize)"]
+        A["2. Architecture<br/>(architect)"]
     end
 
-    subgraph Process[Process]
-      P1["<b> </b><br/><span style='font-size:10px;color:#888'>Defines SW Architecture - Groups Functions<br/>context.md -> architecture.md</span>"]
-      P2["<b>refine</b><br/><span style='font-size:10px;color:#888'>Prepare Implementation<br/>architecture.md & review.md -> tickets/*</span>"]
-      P3["<b>implement</b><br/><span style='font-size:10px;color:#888'>Implement Tickets</span>"]
-      P4["<b>review</b><br/><span style='font-size:10px;color:#888'>Review Software<br/>* -> review.md</span>"]
-      P5["<b>verify</b><br/><span style='font-size:10px;color:#888'>Verify Project against architecture and context</span>"]
+    subgraph AGILE["Agile · modular / per increment"]
+        direction TB
+        R["3. Refinement<br/>(refine, ticket_prep)"]
+        I["4. Implementation<br/>(implement)"]
+        V["5. Review<br/>(review)"]
     end
 
-    subgraph LegacyCode[Module: LegacyCode]
-      L1["<b>analyse</b><br/><span style='font-size:10px;color:#888'>Creates/updates analysis.md from legacy code + review.md</span>"]
-      L2["<b>redesign</b><br/><span style='font-size:10px;color:#888'>Redesigns architecture.md</span>"]
+    subgraph VM_BOT["V-Model · whole project"]
+        direction TB
+        VER["6. Verification<br/>(verify)"]
     end
+
+    D --> A --> R --> I --> V --> VER
+    V -. "rework module" .-> R
+    V -. "feedback" .-> A
+    VER -. "fails requirements" .-> A
+    VER -. "fails requirements" .-> D
+    R -. "gaps / contradictions" .-> A
+    V -. "next module / iterate" .-> R
+
+    classDef vmodel fill:#cde4ff,stroke:#2b6cb0,color:#000;
+    classDef agile fill:#d8f5d0,stroke:#38a169,color:#000;
+    class D,A,VER vmodel;
+    class R,I,V agile;
 ```
 
-## Overview - Repository-Files
+## Skill map
 
+| Skill         | Mode            | Purpose                                                  | Main output                                              |
+|---------------|-----------------|----------------------------------------------------------|----------------------------------------------------------|
+| `init`        | interactive     | Scan/interview and create project source-of-truth docs.  | `copilot/context.md`, `copilot/software_requirements.md` |
+| `brainstorm`  | interactive     | Explore, rate and validate ideas with the user.          | updated `context.md` / `software_requirements.md`        |
+| `criticize`   | interactive     | Find gaps, contradictions, risks and overengineering.    | updated `context.md` / `software_requirements.md`        |
+| `architect`   | interactive     | Group functionality into components and interfaces.      | `copilot/architecture.md`                                |
+| `analyse`     | interactive     | Reverse-engineer existing legacy code. Refactoring.      | `copilot/analysis.md`                                    |
+| `redesign`    | interactive     | Convert legacy findings into target architecture.        | `copilot/architecture.md`                                |
+| `refine`      | interactive     | Detail components into modules, units, data and tests.   | `copilot/refinement/component_*.md`                      |
+| `ticket_prep` | interactive     | Split refined work into vertical implementation tickets. | `copilot/tickets/####.md`, `kanban.md`                   |
+| `implement`   | non-interactive | Implement tickets and verify acceptance criteria.        | code, tests, ticket status, `kanban.md`                  |
+| `review`      | non-interactive | Review code/changes against docs and quality rules.      | `copilot/review/review_*.md`                             |
+| `verify`      | non-interactive | Verify requirements/components against evidence.         | `copilot/verify.md`                                      |
 
-```mermaid
-flowchart TB
+## Target project artifacts
 
-    subgraph copilot[copilot]
-        C1["<b>copilot/context.md</b><br/><span style='font-size:10px;color:#888'>Basic non functional information + Quality expectation + Basic LLM guidelines</span>"]
-        C2["<b>copilot/architecture.md</b><br/><span style='font-size:10px;color:#888'>Highlevel Software Architecture<br/>Functionality split in Components + Interfaces and flowcharts</span>"]
-        C3["<b>copilot/refinement.md</b><br/><span style='font-size:10px;color:#888'>Current idea of the implementation</span>"]
-        C9["<b>copilot/review.md</b><br/><span style='font-size:10px;color:#888'>Review of the current state of the software</span>"]
-        C10["<b>copilot/verify.md</b><br/><span style='font-size:10px;color:#888'>Final verification result</span>"]
-    end
+| File                                | Purpose                                                  |
+|-------------------------------------|----------------------------------------------------------|
+| `copilot/context.md`                | project description, tech stack, quality rules, glossary |
+| `copilot/software_requirements.md`  | requirements + behavior source of truth                  |
+| `copilot/architecture.md`           | components, functionality, interfaces, diagrams          |
+| `copilot/analysis.md`               | legacy architecture + risks                              |
+| `copilot/refinement/component_*.md` | modules, units, data, tests                              |
+| `copilot/tickets/####.md`           | implementation tickets                                   |
+| `copilot/tickets/kanban.md`         | generated board                                          |
+| `copilot/review/review_*.md`        | ranked findings                                          |
+| `copilot/verify.md`                 | evidence, verdict, open tests                            |  
+| `scripts/kanban.py`                 | generates the ticket board from tickets                  |
 
-    subgraph tickets[copilot/tickets]
-        C4["<b>copilot/tickets/kanban.md</b><br/><span style='font-size:10px;color:#888'>Kanban overview of all tickets</span>"]
-        C5["<b>copilot/tickets/####.md</b><br/><span style='font-size:10px;color:#888'>Ticket to implement</span>"]
-        C8["<b>copilot/tickets/debt_####.md</b><br/><span style='font-size:10px;color:#888'>Technical debt ticket</span>"]
-    end
-```
-
-### Mermaid kanban example
-
-Optional helper: `scripts/kanban.py` can generate this Mermaid overview from all tickets. Agents should execute it after `implement`/`refine` only when the script exists in the target project.
+### Example kanban output format:
 
 ```mermaid
 ---
@@ -74,15 +84,17 @@ config:
 kanban
   Debt
     a[Old Architecture]@{ ticket: d0001, assigned: 'core', priority: 'High' }
-    a[Old Architecture]@{ ticket: d0002, assigned: 'utils', priority: 'High' }
   Todo
     a[Implement Buildsystem]@{ ticket: 0001, assigned: 'buildsystem', priority: 'High' }
-    a[Implement corestructure]@{ ticket: 0002, assigned: 'core', priority: 'High' }
   InProgress
     a[Creating Documents]@{ ticket: 0003, assigned: 'core', priority: 'Low' }
   Done
     a[Remove Old files]@{ ticket: 0004, assigned: 'none', priority: 'Very Low' }
   Failed
     a[Remove src]@{ ticket: 0005, assigned: 'core', priority: 'Very High' }
-
 ```
+
+## Changes
+
+- 13.06.2026 - Updated README to match current `copilot-instructions.md` and all skill metadata.
+- 09.06.2026 - Split `context.md` into `context.md` + `software_requirements.md`; removed example files; removed update and quality skills; finalized SDLC.
