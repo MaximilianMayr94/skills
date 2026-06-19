@@ -119,13 +119,12 @@ def render_kanban(tickets: list[Ticket]) -> str:
 
     for column in COLUMN_ORDER:
         column_tickets = by_column.get(column, [])
-        if not column_tickets:
-            continue
         lines.append(f"  {column}")
         for ticket in column_tickets:
+            assigned = ticket.assigned[:10]
             lines.append(
                 f"    a[{ticket.title}]@{{ ticket: {ticket.ticket_id}, "
-                f"assigned: '{ticket.assigned}', priority: '{ticket.priority}' }}"
+                f"assigned: '{assigned}', priority: '{ticket.priority}' }}"
             )
 
     lines.append("```")

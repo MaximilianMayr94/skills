@@ -15,7 +15,8 @@ allowed-tools: shell
 - Refine the component(s) into modules/units and data structures. 
 - Define the test approach (TDD) and list test cases.
 - Reduce duplicate code/functions as much as possible.
-- Implement/define the component/functions in a simple way.
+- Define the component/functions in a simple way.
+- Ignore how it will be implemented (Slicing)
 
 # Phase 3 - Discuss with user
 - Ask the user open questions. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Clarify Slices. Every few questions (max. 5) ask the user if he wants to progress to phase 4 or if he wants to continue refining with more questions.

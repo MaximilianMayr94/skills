@@ -3,6 +3,7 @@
 - **Assigned to:** <component/module>
 - **Priority:** Very Low, Low, Medium, High, Very High
 - **Depends on:** <#### or none>
+- **Slice:** <1..n or none>
 
 ## Scope
 - Define what to do in this ticket. Be specific and clear. (Files, functions, methods, tests)

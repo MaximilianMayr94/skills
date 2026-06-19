@@ -20,4 +20,5 @@ allowed-tools: shell
 
 # Phase 4 - Creation
 - Create `copilot/tickets/####.md` use the template defined in `ticket.default.md`
+- Ticket numbering: linear in order of execution
 - Execute the `scripts/kanban.py` script to create the `copilot/tickets/kanban.md` file
