@@ -16,7 +16,8 @@
 - Use git only for read-only actions
 
 ### Software Development Lifecycle - SDLC
-This project follows the VAgile process. It is a combination of the traditional V-Model and the Agile process. The macro part of the project (beginning and end) follows the V-Model, while the micro part (Refinement/Implementation/Review) follows an agile methodology.
+This project follows the VAgile process. It is a combination of the traditional V-Model and the Agile process. The macro part of the project (beginning and end) follows the V-Model, while the micro part (Refinement/Implementation/Review) follows an agile methodology. The V-Model parts aim to be slow and complete, while the AGILE part aims to be quick and should be seen as prototyping.
+
 1. Definition (V-Model - whole project): In this phase the project context and software requirements are defined. `context.md`, `software_requirements.md` are created. (init, brainstorm, criticize skill)
 2. Architecture (V-Model - whole project): In this phase the `architecture.md` is defined and created from `context.md` and `software_requirements.md`. Functions are grouped in components and interfaces are defined. (architect skill)
 3. Refinement (Agile - part): In this phase the implementation/design of each *component is defined. For each component modules and units are defined. As well as data handling, interfaces and so on. So the code can be completely derived from these documents. Executed component for component. (refine, ticket_prep skill)
