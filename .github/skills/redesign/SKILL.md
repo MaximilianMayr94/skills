@@ -19,12 +19,6 @@ allowed-tools: shell
 - Discuss with the user what you found, ask questions about the code, the architecture and the context. Clarify your understanding of the code, architecture, gaps, problems, code quality and so on.
 - After a few questions - max 5. - ask the user if he wants to progress to phase 3 or in case you do not have more questions progress to phase 3.
 
-```mermaid
-flowchart LR
-  cur[Current: analysis.md] --> step[Migration steps]
-  step --> tgt[Target architecture]
-```
-
 # Phase 3 - Select
 - Let the user pick what to keep. Simple by questions for each idea: Do not ask the user to pick between ideas, but ask for each idea if he wants to keep it or not. Do not ask the user to rate ideas by value vs effort, but do it yourself based on the discussion with the user and your understanding of the project. Add it to the question like this  "Do you want to keep this idea? yes/no/optional user input".
 - Then progress to phase 4 with the selected ideas.

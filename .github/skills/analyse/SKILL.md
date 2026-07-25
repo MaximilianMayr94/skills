@@ -17,8 +17,10 @@ allowed-tools: shell
 - Record smells, risks, dead code, coupling, missing tests.
 
 # Phase 2 - Discuss
-- Discuss with the user what you found, ask questions about the code, the architecture and the context. Clarify your understanding of the code, architecture, gaps, problems, code quality and so on.
-- After a few questions - max 5. - ask the user if he wants to progress to phase 3 or in case you do not have more questions progress to phase 3.
+# Phase 3 - Discuss with user
+- Ask the user open questions. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one.
+- Every few questions (max. 5) ask the user if he wants to progress to phase 3 or if he wants to continue refining with more questions.
+- For each question give the user a custom answer field so he can enter something else
 
 # Phase 3 - Write analysis.md
 - Write `copilot/analysis.md` using `analysis.default.md` (this folder) as template.

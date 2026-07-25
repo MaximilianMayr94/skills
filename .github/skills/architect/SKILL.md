@@ -15,7 +15,9 @@ allowed-tools: shell
 - A good component has a clear and small interface and a lot of functionality hidden inside.
 
 # Phase 2 - Discuss with user
-- Ask the user open questions to widen the solution space. Discuss with the user question by question refine ideas and generate new ones. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one. Every few questions ask the user if he wants to progress to phase 3 or if he wants to continue refining the architecture with more questions.
+- Ask the user open questions. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one.
+- Every few questions (max. 5) ask the user if he wants to progress to phase 3 or if he wants to continue refining with more questions.
+- For each question give the user a custom answer field so he can enter something else
 
 # Phase 3 - Write architecture.md
 - Write the `copilot/architecture.md` document. - Use `architecture.default.md` (this folder) as template; see `architecture.example.md`.

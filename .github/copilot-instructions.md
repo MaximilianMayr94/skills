@@ -1,11 +1,15 @@
 ### General Rules
-- Communication and files should be short and concise because they are processed by AI.
+
+- Communication can be nearly skipped as most of the information is in the documents.
+  - Keep the final answer to the minimum, do not explain anything just write notes what was done.
+- files should be short and concise because they are processed by AI.
   - Use bullet points instead of long paragraphs.
   - Use mermaid diagrams as much as possible - pictures tell more than words
-- Do not explain everything, expect professional knowledge
+- Do not explain everything, expect professional knowledge. But always explain referenced tools / and libraries in one short sentence
 - Reference content instead of writing it again
 - For diagrams use "mermaid" in markdown
 - Always ask for clarification if you are not sure about something. Do not make assumptions.
+- Keep your answer short, communicate in the documents/files
 
 ### Constraints
 - Never change files outside of this repository
@@ -31,7 +35,7 @@ flowchart TB
 
     subgraph AGILE["Agile · modular / per increment"]
         direction TB
-        R["3. Refinement<br/>(refine, ticket_prep)"]
+        R["3. Refinement<br/>(refinement, ticket_prep)"]
         I["4. Implementation<br/>(implement)"]
         V["5. Review<br/>(review)"]
     end
@@ -61,6 +65,7 @@ flowchart TB
 - ``copilot/software_requirements.md``: Product and software requirements source of truth.
 - ``copilot/architecture.md``: This document contains the current software architecture. It defines the components, their functionality and their interfaces. It also contains flowcharts and diagrams to explain the architecture.
 - ``copilot/refinement/component_*.md``: These documents define how to implement the software architecture. Each component has its own document.
+- ``copilot/refinement/interface_*.md``: These documents define how to implement the software architecture. Main interfaces have their own document.
 - ``copilot/tickets/####.md``: This folder contains all generated tickets and a kanban overview.
 - ``copilot/review/review_*.md``: These documents contain the review of the current state of the software. It defines problems, bugs, gaps and contradicting information in the software. It also contains suggestions for improvements and changes to the architecture and refinement.
 - ``copilot/verify.md``: This document contains the final verification result. It defines how well the software meets the requirements and how well it follows the architecture and refinement. It also contains suggestions for improvements and changes to the architecture and refinement.
@@ -85,7 +90,10 @@ flowchart TB
 - Component: Highest level of abstraction of functionality. A component can be divided into sub-components and sub-sub-components if needed, but this is only for extremely big projects. A component contains modules and the component unit (named after the component). Components are not necessarily software-relevant; they are groups of functionality. (I.e. component "User Management" could contain module "Authentication", which contains units "WebDav", "OAuth", "LDAP" and so on.)
 - Module: Groups units that belong together and share common interfaces. A module can also have a unit that is named after the module.
 - Unit: A unit is a .h and a .c/cpp file that mostly contains a class.
-- Interface: An interface are the functions that are needed to interact with a Component/Module/Unit. Interfaces can be functions of a class, an abstract/virtual class and even static global functions.
+- Interface: An interface are the functions that are needed to interact with a Component/Module/Unit. Interfaces can be functions of a class, an abstract/virtual class and even static global functions. But they also can be protocols or files.
+- Message: An message is a part of an interface this can be one message of a protocol
+- Field: An field is a part of a Message.
+- Argument: An argument is a part of a function.
 - Vertical Slicing: Implementing the software by slices. Each slice is a vertical through the architecture, implementing one feature so the user can test and give feedback early on.
 - Slice: A slice is a group of connected functions through the architecture for a small amount of features in full functionality. (i.e. First Slice: buildsystem, Second Slice: Setup assistant, Third Slice: Settings management, and so on.)
 - Test driven development (TDD): First implement tests that will cover all functionality that is followed to implement.

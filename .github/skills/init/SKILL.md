@@ -15,8 +15,8 @@ Ask the user about:
 - project purpose, process, tech stack, quality and test expectations,
 - product scope, actors, user flows, detailed functionality, acceptance criteria and data contracts,
 - bugs, gaps, problems and contradictions in existing material.
-
-Always ask for clarification if you are not sure about something. Do not make assumptions. After a few questions - max 5. - ask the user if he wants to progress to phase 3 or in case you do not have more questions progress to phase 3.
+- Every few questions (max. 5) ask the user if he wants to progress to phase 3 or if he wants to continue refining with more questions.
+- For each question give the user a custom answer field so he can enter something else
 
 # Phase 3 - Create documents
 - Create `copilot/context.md` in the target project using `context.default.md` (this folder) as template.

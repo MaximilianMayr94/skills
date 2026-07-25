@@ -39,7 +39,7 @@ flowchart TB
 
     subgraph AGILE["Agile · modular / per increment"]
         direction TB
-        R["3. Refinement<br/>(refine, ticket_prep)"]
+        R["3. Refinement<br/>(refinement, ticket_prep)"]
         I["4. Implementation<br/>(implement)"]
         V["5. Review<br/>(review)"]
     end

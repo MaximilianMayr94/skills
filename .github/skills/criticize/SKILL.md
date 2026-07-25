@@ -17,7 +17,9 @@ Analyze the loaded material and look for:
 - Missing tests or quality gates.
 
 # Phase 3 - Discuss
-- Discuss with the user each all found points if they are  valid and what they think about them. Do not assume. Discuss with the user question by question and refine the problems. Do not ask all questions at once. Discuss each critique and its answer before moving to the next one. Every few questions ask the user if they want to progress to phase 4 or continue discussing more collected critiques.
+- Ask the user open questions. Do not ask all questions at once, but one by one, discuss each question and its answer before moving to the next one.
+- Every few questions (max. 5) ask the user if he wants to progress to phase 4 or if he wants to continue refining with more questions.
+- For each question give the user a custom answer field so he can enter something else
 
 # Phase 4 - Apply
 - Ask the user to either
